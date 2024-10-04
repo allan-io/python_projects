@@ -24,4 +24,4 @@ else:
     if extra_cheese == "Y":
         total += 1
 
-print(f"your final bill is: ${total}")
+print(f"your final bill is: ${total}.")
