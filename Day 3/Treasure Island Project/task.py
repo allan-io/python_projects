@@ -27,27 +27,27 @@ print("Your mission is to find the treasure.")
 direction = input('''
 You're at a cross road. Where do you want to go? 
     Type "left" or "right"
-''')
+''').lower()
 
-if direction != "left" and direction != "Left":
+if direction != "left":
     print("Fall into a hole. Game Over")
 else:
     action = input('''
 You've come to a lake. There is an island in the middle of the lake.
     Type "wait" to wait for a boat. Type "swim" to swim across.
-''')
-    if action != "wait" and action != "Wait":
+''').lower()
+    if action != "wait":
         print("Attacked by trout. Game Over")
     else:
         which_door = input('''
 You arrive at the island unharmed. There is a house with 3 doors.
     One red, one yellow, and one blue. Which color do you choose?
-''')
-        if which_door == "yellow" or which_door == "Yellow":
+''').lower()
+        if which_door == "yellow":
             print("You Win!")
-        elif which_door == "blue" or which_door == "Blue":
+        elif which_door == "blue":
             print("Eaten by beasts. Game Over.")
-        elif which_door == "red" or which_door == "Red":
+        elif which_door == "red":
             print("Burned by fire. Game Over")
         else:
             print("Game Over.")
