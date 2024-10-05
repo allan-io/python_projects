@@ -7,3 +7,9 @@ for score in student_scores:
         highest_num = score
 
 print(highest_num)
+
+sum_var = 0
+for num in range(1,101):
+    sum_var += num
+
+print(sum_var)
