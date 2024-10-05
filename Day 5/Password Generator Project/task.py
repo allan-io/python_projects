@@ -12,16 +12,13 @@ nr_numbers = random.randint(7, 12)
 password_list = []
 
 for num in range(1, nr_letters + 1):
-    random_index = random.randint(1, len(letters) - 1)
-    password_list += letters[random_index]
+    password_list += random.choice(letters)
 
 for num in range(1, nr_numbers + 1):
-    random_index = random.randint(1, len(numbers) - 1)
-    password_list += numbers[random_index]
+    password_list += random.choice(numbers)
 
 for num in range(1, nr_symbols + 1):
-    random_index = random.randint(1, len(symbols) - 1)
-    password_list += symbols[random_index]
+    password_list += random.choice(symbols)
 
 random.shuffle(password_list)
 
