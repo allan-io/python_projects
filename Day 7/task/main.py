@@ -8,9 +8,9 @@ print(chosen_word)
 guess = input("Guess one letter: ").lower()
 # TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word. Print "Right" if it
 #  is, "Wrong" if it's not.
-result = chosen_word.find(guess)
 
-if result < 0:
-    print("Wrong")
-else:
-    print("Correct")
+for letter in chosen_word:
+    if letter == guess:
+        print("Right")
+    else:
+        print("wrong")
