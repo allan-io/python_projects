@@ -34,6 +34,9 @@ choices_name = ["rock", "paper", "scissors"]
 player_index = int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors."))
 computer_index = random.randint(0,2)
 
+while player_index < 0 or player_index > 2:
+    player_index = int(input("Invalid number, please choose 0 for Rock, 1 for Paper, 2 for Scissors."))
+
 player_choice_img = choices_image[player_index]
 computer_choice_img = choices_image[computer_index]
 
