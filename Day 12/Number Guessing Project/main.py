@@ -1,9 +1,9 @@
 import art
 import random
 
-print(art.logo)
-
 def play_game():
+    print(art.logo)
+
     secret_number = random.randint(1, 100)
     print("welcome to the Guessing Game!\nI'm thinking of a number between 1 and 100")
 
@@ -17,7 +17,7 @@ def play_game():
         if guess != secret_number:
             attempts -= 1
             if attempts == 0:
-                print("You've run out of guesses, you lose.\n\n")
+                print(f"You Lose. the secret number was {secret_number}\n\n")
             else:
                 message = "Too High" if guess > secret_number else "Too Low"
                 print(f"{message}\nYou have {attempts} attempts remaining to guess the number.")
