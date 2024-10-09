@@ -1,24 +1,42 @@
+from random import randint
+
 from game_data import data
 import art
+import random
+
+def check_correct_answer(a_count, b_count, player_answer):
+    most_followers = "a" if a_count > b_count else "b"
+    return True if player_answer == most_followers else False
+
+def choose_new_profile():
+    print("new profile")
 
 def play_game():
     print(art.logo)
+    a = random.choice(data)
+    b = random.choice(data)
+    game_over = False
+    score = 0
 
+
+    while not game_over:
+        print(f"Compare A: {a["name"]}, a {a["description"]}, from {a["country"]}")
+        print(art.vs)
+        print(f"Against B: {b["name"]}, a {b["description"]}, from {b["country"]}")
+        player_answer = input("Who has more followers? Type 'B' or 'A'")
+        result = check_correct_answer(a["follower_count"], b["follower_count"], player_answer)
+        if result:
+            score += 1
+            print("\n" * 20)
+            print(f"You're right! Current score: {score}")
+            a = b
+            b = random.choice(data)
+        else:
+            print("\n" * 20)
+            game_over = True
+            print(f"Sorry, that's wrong. Final score {score}")
 
 play_game()
-#define play_game function and call function to start game
-
-#import art and gamedata
-# choose 2 entries from the dictionary and save to vars profile_a and profile_b
-#create game over variable set to False. Turn this to true once player gets answer wrong
-#create score variable that changes with each correct guess until game over
-#in a while loop check for game over if game not over AKA player has not gotten answer wrong:
-    #print description about each profile with VS art in between
-    #ask player to choose one
-    #if correct, profile b becomes profile a and we get a new random profile from gamedata
-    # add one to score and display score
-    #if wrong answer, display score
-
 
 
 
