@@ -15,6 +15,8 @@ def play_game():
     print(art.logo)
     a = random.choice(data)
     b = random.choice(data)
+    while a == b:
+        a = random.choice(data)
     game_over = False
     score = 0
 
